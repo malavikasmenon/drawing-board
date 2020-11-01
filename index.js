@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 ctx.canvas.width = window.innerWidth;
-ctx.canvas.height = window.innerHeight;
+ctx.canvas.height = window.innerHeight - 100;
 
 let gLineSize = 1;
 let color = "#000000";
@@ -17,7 +17,7 @@ window.onresize = function() {
 
 function resize() {
     ctx.canvas.width = window.innerWidth;
-    ctx.canvas.height = window.innerHeight;
+    ctx.canvas.height = window.innerHeight - 100;
 }
 
 let paint = false;
@@ -52,6 +52,7 @@ function draw(e) {
 document.getElementById('clear').onclick = function() {
     console.log('Cleared');
     resize();
+    gLineSize = 1;
 }
 
 const selectSize = document.querySelector('#linesize');
